@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.9 on darwin)" generated="2025-04-19T21:00:08.566977" rpa="false" schemaversion="5">
+<suite id="s1" name="Android Tests" source="/Users/priscilabier/Projects/Robot-framework-mobile/tests/android_tests.robot">
+<test id="s1-t1" name="Teste de Login" line="9">
+<kw name="Abrir Aplicativo" owner="common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-19T21:00:08.657323" level="INFO">Iniciando abertura do aplicativo...</msg>
+<arg>Iniciando abertura do aplicativo...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-19T21:00:08.657259" elapsed="0.000097"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>newCommandTimeout=2500</arg>
+<arg>platformVersion=14</arg>
+<arg>app=${ANDROID_APP}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-04-19T21:00:08.657412" elapsed="5.586989"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-19T21:00:14.250632" level="INFO">Aplicativo aberto com sucesso</msg>
+<arg>Aplicativo aberto com sucesso</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-19T21:00:14.249722" elapsed="0.001058"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-19T21:00:19.253695" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-19T21:00:14.250984" elapsed="5.004186"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:08.656919" elapsed="10.602069"/>
+</kw>
+<kw name="Fazer Login" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:19.267979" elapsed="2.336423"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:21.606254" level="INFO">Clicking element 'android=new UiSelector().text("Sign In")'.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:21.605100" elapsed="0.182950"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:21.788394" elapsed="1.992168"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:23.782394" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(0)'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:23.781143" elapsed="0.640776"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:24.424347" level="INFO">Typing text 'priscila.bier+brdone@birdirx.com' into text field 'android=new UiSelector().className("android.widget.EditText").instance(0)'</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>priscila.bier+brdone@birdirx.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:24.422371" elapsed="0.981429"/>
+</kw>
+<kw name="Hide Keyboard" owner="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" start="2025-04-19T21:00:25.405923" elapsed="1.127056"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:26.533440" elapsed="0.432620"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:26.967107" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(1)'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:26.966204" elapsed="0.174882"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:27.143697" level="INFO">Typing text 'Test1234!' into text field 'android=new UiSelector().className("android.widget.EditText").instance(1)'</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>Test1234!</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:27.141532" elapsed="1.164290"/>
+</kw>
+<kw name="Hide Keyboard" owner="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" start="2025-04-19T21:00:28.306423" elapsed="1.886153"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:30.193360" elapsed="0.582304"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:30.778494" level="INFO">Clicking element 'android=new UiSelector().text("Sign In")'.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:30.776002" elapsed="0.169670"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:19.266920" elapsed="11.679033"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${WELCOME_MESSAGE}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:30.946378" elapsed="6.966647"/>
+</kw>
+<kw name="Fechar Aplicativo" owner="common" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-04-19T21:00:37.914680" elapsed="1.296009"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:37.914344" elapsed="1.297869"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:08.656518" elapsed="30.556436"/>
+</test>
+<test id="s1-t2" name="Teste de Cadastro de Endereço" line="13">
+<kw name="Abrir Aplicativo" owner="common" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-19T21:00:39.222628" level="INFO">Iniciando abertura do aplicativo...</msg>
+<arg>Iniciando abertura do aplicativo...</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-19T21:00:39.221800" elapsed="0.000949"/>
+</kw>
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=emulator-5554</arg>
+<arg>autoGrantPermissions=true</arg>
+<arg>newCommandTimeout=2500</arg>
+<arg>platformVersion=14</arg>
+<arg>app=${ANDROID_APP}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-04-19T21:00:39.223160" elapsed="6.446276"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-19T21:00:45.670988" level="INFO">Aplicativo aberto com sucesso</msg>
+<arg>Aplicativo aberto com sucesso</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-19T21:00:45.670641" elapsed="0.000389"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-19T21:00:50.674131" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-19T21:00:45.671104" elapsed="5.005489"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:39.219840" elapsed="11.457872"/>
+</kw>
+<kw name="Fazer Login" owner="common">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:50.680235" elapsed="1.684854"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:52.366264" level="INFO">Clicking element 'android=new UiSelector().text("Sign In")'.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:52.365385" elapsed="0.104688"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${USERNAME_FIELD}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:52.470358" elapsed="1.559600"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:54.031616" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(0)'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:54.030413" elapsed="1.328486"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:55.368638" level="INFO">Typing text 'priscila.bier+brdone@birdirx.com' into text field 'android=new UiSelector().className("android.widget.EditText").instance(0)'</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>priscila.bier+brdone@birdirx.com</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:55.359859" elapsed="0.138422"/>
+</kw>
+<kw name="Hide Keyboard" owner="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" start="2025-04-19T21:00:55.498401" elapsed="0.908220"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:56.407216" elapsed="0.477396"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:56.885497" level="INFO">Clicking element 'android=new UiSelector().className("android.widget.EditText").instance(1)'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:56.884736" elapsed="0.149979"/>
+</kw>
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-04-19T21:00:57.035544" level="INFO">Typing text 'Test1234!' into text field 'android=new UiSelector().className("android.widget.EditText").instance(1)'</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>Test1234!</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:00:57.034846" elapsed="1.051738"/>
+</kw>
+<kw name="Hide Keyboard" owner="AppiumLibrary">
+<doc>Hides the software keyboard on the device. (optional) In iOS, use `key_name` to press
+a particular key, ex. `Done`. In Android, no parameters are used.</doc>
+<status status="PASS" start="2025-04-19T21:00:58.087050" elapsed="1.846388"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-04-19T21:00:59.933571" elapsed="0.849203"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-04-19T21:01:00.783978" level="INFO">Clicking element 'android=new UiSelector().text("Sign In")'.</msg>
+<arg>${SIGN_IN_BUTTON}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-04-19T21:01:00.783060" elapsed="0.136486"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:00:50.679030" elapsed="10.240698"/>
+</kw>
+<kw name="Fechar Aplicativo" owner="common" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-04-19T21:01:00.920862" elapsed="1.289979"/>
+</kw>
+<status status="PASS" start="2025-04-19T21:01:00.920400" elapsed="1.291539"/>
+</kw>
+<doc>Teste básico de cadastro de endereço no aplicativo</doc>
+<status status="PASS" start="2025-04-19T21:00:39.216100" elapsed="22.996239"/>
+</test>
+<status status="PASS" start="2025-04-19T21:00:08.567834" elapsed="53.646277"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Android Tests" id="s1" pass="2" fail="0" skip="0">Android Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

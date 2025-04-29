@@ -4,8 +4,9 @@ Resource    ../resources/locators.robot
 Library    ../loadEnv.py
 
 *** Variables ***
-${email}    %{email}
-${password}    %{password}
+${login}    %{login}
+${secret}    %{secret}
+
 ${ANDROID_AUTOMATION_NAME}    UiAutomator2
 ${ANDROID_PLATFORM_NAME}      Android
 ${ANDROID_APP}               ${CURDIR}/test.apk    # Substitua pela activity real do seu app

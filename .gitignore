@@ -54,3 +54,4 @@ results/
 
 # Environment variables
 .env
+*.apk

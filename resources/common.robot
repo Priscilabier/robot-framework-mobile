@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../config/appium_config.robot
 Resource    ../config/device_config.robot
+Resource    ./pages/login_page.robot
 Library     AppiumLibrary
 Library     OperatingSystem
 Library     String
@@ -49,16 +50,9 @@ Perform Login
     [Documentation]    Performs login with the provided credentials
     Wait Until Element Is Visible    ${SIGN_IN_BUTTON}
     Click Element    ${SIGN_IN_BUTTON}
-    Wait Until Element Is Visible    ${USERNAME_FIELD}    timeout=20s
-    Click Element    ${USERNAME_FIELD}
-    Input Text    ${USERNAME_FIELD}    ${LOGIN_EMAIL}
-    Hide Keyboard
-    Wait Until Element Is Visible    ${PASSWORD_FIELD}
-    Click Element    ${PASSWORD_FIELD}
-    Input Text    ${PASSWORD_FIELD}    ${LOGIN_PASSWORD}
-    Hide Keyboard
-    Wait Until Element Is Visible    ${SIGN_IN_BUTTON}
-    Click Element    ${SIGN_IN_BUTTON}
+    Input Username    ${LOGIN_EMAIL}
+    Input Password    ${LOGIN_PASSWORD}
+    Click Sign In Button
 
 Fechar Aplicativo
     Close Application

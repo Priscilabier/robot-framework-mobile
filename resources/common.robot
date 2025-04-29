@@ -27,11 +27,11 @@ Fazer Login
     Click Element    ${SIGN_IN_BUTTON}
     Wait Until Element Is Visible    ${USERNAME_FIELD}    timeout=20s
     Click Element    ${USERNAME_FIELD}
-    Input Text    ${USERNAME_FIELD}    priscila.bier+brdone@birdirx.com
+    Input Text    ${USERNAME_FIELD}    email@email.com
     Hide Keyboard
     Wait Until Element Is Visible    ${PASSWORD_FIELD}
     Click Element    ${PASSWORD_FIELD}
-    Input Text    ${PASSWORD_FIELD}    Test1234!
+    Input Text    ${PASSWORD_FIELD}    password
     Hide Keyboard
     Wait Until Element Is Visible    ${SIGN_IN_BUTTON}
     Click Element    ${SIGN_IN_BUTTON}

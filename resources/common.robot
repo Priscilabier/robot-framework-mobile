@@ -48,8 +48,7 @@ Take Screenshot On Failure
 
 Perform Login
     [Documentation]    Performs login with the provided credentials
-    Wait Until Element Is Visible    ${SIGN_IN_BUTTON}
-    Click Element    ${SIGN_IN_BUTTON}
+    Click Sign In Button
     Input Username    ${LOGIN_EMAIL}
     Input Password    ${LOGIN_PASSWORD}
     Click Sign In Button

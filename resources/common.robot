@@ -1,11 +1,14 @@
 *** Settings ***
 Library    AppiumLibrary
-Resource          ../resources/locators.robot
+Resource    ../resources/locators.robot
+Library    ../loadEnv.py
 
 *** Variables ***
+${email}    %{email}
+${password}    %{password}
 ${ANDROID_AUTOMATION_NAME}    UiAutomator2
 ${ANDROID_PLATFORM_NAME}      Android
-${ANDROID_APP}               ${CURDIR}/app-birdi-release1.apk    # Substitua pela activity real do seu app
+${ANDROID_APP}               ${CURDIR}/test.apk    # Substitua pela activity real do seu app
 
 *** Keywords ***
 Abrir Aplicativo
@@ -27,11 +30,11 @@ Fazer Login
     Click Element    ${SIGN_IN_BUTTON}
     Wait Until Element Is Visible    ${USERNAME_FIELD}    timeout=20s
     Click Element    ${USERNAME_FIELD}
-    Input Text    ${USERNAME_FIELD}    email@email.com
+    Input Text    ${USERNAME_FIELD}    ${email}
     Hide Keyboard
     Wait Until Element Is Visible    ${PASSWORD_FIELD}
     Click Element    ${PASSWORD_FIELD}
-    Input Text    ${PASSWORD_FIELD}    password
+    Input Text    ${PASSWORD_FIELD}    ${password}
     Hide Keyboard
     Wait Until Element Is Visible    ${SIGN_IN_BUTTON}
     Click Element    ${SIGN_IN_BUTTON}

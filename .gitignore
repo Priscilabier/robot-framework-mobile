@@ -2,3 +2,8 @@ app-birdi-release1.apk
 /venv
 *.zip
 .DS_Store
+*.env
+output.xml
+report.html
+/__pycache__
+log.html
